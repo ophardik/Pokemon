@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@400;600&display=swap');
+
+body {
+  background-color: black;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  background-color: black;
+}
+
+h1, h5, input {
+  color: white;
+  font-family: 'Press Start 2P', cursive; /* Consistent with title */
+}
+
+img {
+  @REM background: rgba(0, 0, 0, 0.7); /* Ensuring consistency */
+  border-radius: 10px;
+}
+
+.save-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto !important;
+  min-width: 200px;
+}
+
+.pokemon-card {
+  background: linear-gradient(135deg, #ffcb05, #3b4cca); /* Matching previous design */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+  padding: 15px;
+  text-align: center;
+}
+
+.pokemon-card:hover {
+  transform: translateY(-5px);
+}
+
+.pokemon-name {
+  font-size: 0.9rem;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 8px;
+  border-radius: 8px;
+  display: inline-block;
+  max-width: 90%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: 'Press Start 2P', cursive; /* Ensuring consistency */
+}
+
+.pokemon-image {
+  width: 100%;
+  height: auto;
+  max-height: 150px;
+  object-fit: contain;
+  border-radius: 8px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.pokemon-card:hover .pokemon-image {
+  transform: scale(1.1);
+}
+.custom-button {
+  font-family: "Press Start 2P", cursive !important;
+}
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@400;600&display=swap');
+
+body {
+  background-color: black;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  background-color: black;
+}
+
+h1, h5, input {
+  color: white;
+  font-family: 'Press Start 2P', cursive; /* Consistent with title */
+}
+
+img {
+  @REM background: rgba(0, 0, 0, 0.7); /* Ensuring consistency */
+  border-radius: 10px;
+}
+
+.save-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto !important;
+  min-width: 200px;
+}
+
+.pokemon-card {
+  background: linear-gradient(135deg, #ffcb05, #3b4cca); /* Matching previous design */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+  padding: 15px;
+  text-align: center;
+}
+
+.pokemon-card:hover {
+  transform: translateY(-5px);
+}
+
+.pokemon-name {
+  font-size: 0.9rem;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 8px;
+  border-radius: 8px;
+  display: inline-block;
+  max-width: 90%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: 'Press Start 2P', cursive; /* Ensuring consistency */
+}
+
+.pokemon-image {
+  width: 100%;
+  height: auto;
+  max-height: 150px;
+  object-fit: contain;
+  border-radius: 8px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.pokemon-card:hover .pokemon-image {
+  transform: scale(1.1);
+}
+
+.custom-button {
+  font-family: "Press Start 2P", cursive !important;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .pokemon-card {
+    padding: 10px;
+  }
+
+  .pokemon-name {
+    font-size: 0.8rem;
+  }
+
+  .pokemon-image {
+    max-height: 120px;
+  }
+
+  .save-btn {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pokemon-card {
+    padding: 8px;
+  }
+
+  .pokemon-name {
+    font-size: 0.7rem;
+  }
+
+  .pokemon-image {
+    max-height: 100px;
+  }
+
+  .save-btn {
+    font-size: 18px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h5 {
+    font-size: 1rem;
+  }
+
+  input {
+    font-size: 0.9rem;
+  }
+}
+/* Custom styles for Swiper navigation arrows */
+.swiper-button-next,
+.swiper-button-prev {
+  color: white; /* Arrow color */
+  background-color: rgba(0, 0, 0, 0.5); /* Background color */
+  border-radius: 50%; /* Circular shape */
+  width: 40px; /* Size of the arrow */
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Darker background on hover */
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 20px; /* Size of the arrow icon */
+  font-weight: bold;
+}

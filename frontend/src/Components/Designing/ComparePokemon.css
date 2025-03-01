@@ -1,0 +1,98 @@
+/* Apply a full background color */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@400;600&display=swap');
+
+.compare-container {
+  @REM background-color: #1e1e2f; /* Dark blue-purple background */
+background:linear-gradient(4deg, #ffffff, #000000); 
+ min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: white;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Title Styling */
+.compare-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  color: white; /* Bright yellow */
+    font-family: 'Press Start 2P', cursive; /* Retro gaming font */
+
+}
+
+/* Loading & Empty Messages */
+.loading-text,
+.empty-text {
+  font-size: 1.2rem;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* List Styling */
+.pokemon-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Individual Pokémon Card */
+.pokemon-card2 {
+  background: linear-gradient(323deg, #fffaf8, #705124);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 280px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.pokemon-card:hover {
+  transform: scale(1.05);
+}
+
+/* Pokémon Image */
+.pokemon-image {
+  width: 100px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid white;
+  margin-bottom: 10px;
+}
+
+/* Name Styling */
+.pokemon-name3 {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: white;
+}
+
+/* VS Text */
+.vs-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffeb3b;
+  margin: 10px 0;
+}
+
+/* Winner Text */
+.winner-text {
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 5px 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+}

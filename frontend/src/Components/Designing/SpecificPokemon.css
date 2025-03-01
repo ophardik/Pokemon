@@ -1,0 +1,548 @@
+@REM /* 🌟 Universal Styles */
+@REM body {
+@REM   font-family: 'Poppins', sans-serif; /* Apply same font everywhere */
+@REM   @REM background: linear-gradient(135deg, #ffcb05, #3b4cca);
+@REM   color: white;
+@REM   @REM margin: 0;
+@REM   @REM padding: 0;
+@REM }
+
+@REM /* 🎯 Main Container */
+@REM .specific-pokemon-container {
+@REM     background: linear-gradient(135deg, #35907d, #000000);
+
+@REM   position: relative;
+@REM   width: 100vw;
+@REM   height: 100vh;
+@REM   display: flex;
+@REM   justify-content: center;
+@REM   align-items: center;
+@REM   overflow: hidden;
+@REM }
+
+@REM /* 🌟 Highlighted Pokémon Image */
+@REM .pokemon-image2 {
+@REM   width: 300px;
+@REM   height: 300px;
+@REM   border-radius: 50%;
+@REM   border: 6px solid #ffffff;
+@REM   object-fit: contain;
+@REM   box-shadow: 0px 0px 40px #ffffff;
+@REM   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+@REM }
+
+@REM .pokemon-image2:hover {
+@REM   transform: scale(1.2);
+@REM   box-shadow: 0px 0px 60px #ffcc00;
+@REM }
+
+@REM /* 🎯 Name and Type */
+@REM .pokemon-info {
+@REM   position: absolute;
+@REM   top: 20px;
+@REM   left: 30px;
+@REM }
+
+@REM .pokemon-name {
+@REM   font-size: 2rem;
+@REM   color: #fff;
+@REM   background: rgba(0, 0, 0, 0.7);
+@REM   padding: 8px 12px;
+@REM   border-radius: 8px;
+@REM   display: inline-block;
+@REM   max-width: 100%;  /* Allow full width */
+@REM   width: auto; /* Adjust based on content */
+@REM   word-break: break-word; /* Ensures long names wrap */
+@REM   text-align: center; /* Keep it centered */
+@REM   font-family: 'Press Start 2P', cursive; /* Now matching header font */
+@REM }
+
+
+@REM .pokemon-type {
+@REM   font-size: 1.5rem;
+@REM   background: #333;
+@REM   padding: 8px 12px;
+@REM   border-radius: 10px;
+@REM   display: inline-block;
+@REM   margin-top: 5px;
+@REM }
+
+@REM /* 🔘 Evolution Button */
+@REM .next-evolution-button {
+@REM   margin-top: 10px;
+@REM   background: white;
+@REM   color: black;
+@REM   border: 2px solid #ffcc00;
+@REM   padding: 12px 20px;
+@REM   font-size: 1rem;
+@REM   font-weight: bold;
+@REM   border-radius: 15px;
+@REM   cursor: pointer;
+@REM   transition: all 0.3s ease-in-out;
+@REM }
+
+@REM .next-evolution-button:hover {
+@REM   background: #ffcc00;
+@REM   color: black;
+@REM }
+
+@REM /* 📊 Enhanced Stats Container */
+@REM .stats-container {
+@REM   position: absolute;
+@REM   bottom: 20px;
+@REM   left: 30px;
+@REM   background: rgba(0, 0, 0, 0.7);
+@REM   padding: 20px;
+@REM   border-radius: 15px;
+@REM   box-shadow: 0px 0px 15px #ffffff;
+@REM   border: 2px solid #ffffff;
+@REM   text-align: center;
+@REM   width: 300px;
+@REM   font-family: 'Poppins', sans-serif; /* Ensure same font */
+@REM }
+
+@REM /* 📌 Stats Title */
+@REM .strength-weakness-title {
+@REM   font-size: 1.8rem;
+@REM   font-weight: bold;
+@REM   color: ##ffffff;
+@REM   margin-bottom: 10px;
+@REM   text-shadow: 2px 2px 5px rgba(255, 204, 0, 0.8);
+@REM }
+
+@REM /* 🔢 Individual Stats */
+@REM .stat-item {
+@REM   font-size: 1.2rem;
+@REM   font-weight: bold;
+@REM   background: rgba(255, 204, 0, 0.2);
+@REM   padding: 8px 12px;
+@REM   margin-bottom: 8px;
+@REM   border-radius: 10px;
+@REM   color: white;
+@REM   text-transform: capitalize;
+@REM   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+@REM }
+
+@REM /* 🟡 Hover Effect for Stats */
+@REM .stat-item:hover {
+@REM   transform: scale(1.1);
+@REM   box-shadow: 0px 0px 10px rgba(255, 204, 0, 0.8);
+@REM }
+
+@REM /* 🛡️ Strength & Weakness */
+@REM .strength-weakness-container {
+@REM   position: absolute;
+@REM   bottom: 20px;
+@REM   right: 30px;
+@REM }
+
+@REM .strength-container, .weakness-container {
+@REM   display: flex;
+@REM   flex-wrap: wrap;
+@REM   gap: 8px;
+@REM }
+
+@REM .strength-badge, .weakness-badge {
+@REM   font-size: 1rem;
+@REM   padding: 5px 12px;
+@REM   border-radius: 10px;
+@REM   text-transform: capitalize;
+@REM }
+
+@REM .strength-badge {
+@REM   background-color: #0f0;
+@REM   color: black;
+@REM }
+
+@REM .weakness-badge {
+@REM   background-color: #f00;
+@REM   color: white;
+@REM }
+
+
+@REM /* Moves container */
+@REM .moves-container {
+@REM   position: absolute;
+@REM   bottom: 20px;
+@REM   right: 30px;
+@REM   background: rgba(0, 0, 0, 0.7);
+@REM   padding: 20px;
+@REM   border-radius: 15px;
+@REM   box-shadow: 0px 0px 15px #ffffff;
+@REM   border: 2px solid #ffffff;
+@REM   text-align: center;
+@REM   width: 300px;
+@REM   font-family: 'Poppins', sans-serif; /* Ensure same font */
+@REM   z-index: 10;
+@REM }
+
+@REM /* Moves Title */
+@REM .moves-title {
+@REM   font-size: 1.8rem;
+@REM   font-weight: bold;
+@REM   color: #ffffff;
+@REM   margin-bottom: 10px;
+@REM   text-shadow: 2px 2px 5px rgba(255, 204, 0, 0.8);
+@REM }
+
+@REM /* Individual Move Item */
+@REM .move-item {
+@REM   font-size: 1.2rem;
+@REM   font-weight: bold;
+@REM   background: rgba(255, 204, 0, 0.2);
+@REM   padding: 8px 12px;
+@REM   margin-bottom: 8px;
+@REM   border-radius: 10px;
+@REM   color: white;
+@REM   text-transform: capitalize;
+@REM   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+@REM }
+
+@REM /* Hover Effect for Move Items */
+@REM .move-item:hover {
+@REM   transform: scale(1.1);
+@REM   box-shadow: 0px 0px 10px rgba(255, 204, 0, 0.8);
+@REM }
+/* 🌟 Universal Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+/* 🎯 Main Container */
+.specific-pokemon-container {
+  background: linear-gradient(135deg, #35907d, #000000);
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* 🌟 Highlighted Pokémon Image */
+.pokemon-image2 {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 6px solid #ffffff;
+  object-fit: contain;
+  box-shadow: 0px 0px 40px #ffffff;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.pokemon-image2:hover {
+  transform: scale(1.2);
+  box-shadow: 0px 0px 60px #ffcc00;
+}
+
+/* 🎯 Name and Type */
+.pokemon-info {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+}
+
+.pokemon-name {
+  font-size: 2rem;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 8px 12px;
+  border-radius: 8px;
+  display: inline-block;
+  max-width: 100%;
+  width: auto;
+  word-break: break-word;
+  text-align: center;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.pokemon-type {
+  font-size: 1.5rem;
+  background: #333;
+  padding: 8px 12px;
+  border-radius: 10px;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+/* 🔘 Evolution Button */
+.next-evolution-button {
+  margin-top: 10px;
+  background: white;
+  color: black;
+  border: 2px solid #ffcc00;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.next-evolution-button:hover {
+  background: #ffcc00;
+  color: black;
+}
+
+/* 📊 Enhanced Stats Container */
+.stats-container {
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 15px #ffffff;
+  border: 2px solid #ffffff;
+  text-align: center;
+  width: 300px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* 📌 Stats Title */
+.strength-weakness-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 5px rgba(255, 204, 0, 0.8);
+}
+
+/* 🔢 Individual Stats */
+.stat-item {
+  font-size: 1.2rem;
+  font-weight: bold;
+  background: rgba(255, 204, 0, 0.2);
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  border-radius: 10px;
+  color: white;
+  text-transform: capitalize;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* 🟡 Hover Effect for Stats */
+.stat-item:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 10px rgba(255, 204, 0, 0.8);
+}
+
+/* 🛡️ Strength & Weakness */
+.strength-weakness-container {
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+}
+
+.strength-container, .weakness-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.strength-badge, .weakness-badge {
+  font-size: 1rem;
+  padding: 5px 12px;
+  border-radius: 10px;
+  text-transform: capitalize;
+}
+
+.strength-badge {
+  background-color: #0f0;
+  color: black;
+}
+
+.weakness-badge {
+  background-color: #f00;
+  color: white;
+}
+
+/* Moves container */
+.moves-container {
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 15px #ffffff;
+  border: 2px solid #ffffff;
+  text-align: center;
+  width: 300px;
+  font-family: 'Poppins', sans-serif;
+  z-index: 10;
+}
+
+/* Moves Title */
+.moves-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 5px rgba(255, 204, 0, 0.8);
+}
+
+/* Individual Move Item */
+.move-item {
+  font-size: 1.2rem;
+  font-weight: bold;
+  background: rgba(255, 204, 0, 0.2);
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  border-radius: 10px;
+  color: white;
+  text-transform: capitalize;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Hover Effect for Move Items */
+.move-item:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 10px rgba(255, 204, 0, 0.8);
+}
+
+/* Media Queries for Mobile Screens (max-width: 767px) */
+@media (max-width: 767px) {
+  /* 🎯 Main Container */
+  .specific-pokemon-container {
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: flex-start; /* Align items to the top */
+    padding-top: 20px; /* Add padding at the top */
+  }
+
+  /* 🌟 Highlighted Pokémon Image */
+  .pokemon-image2 {
+    width: 200px; /* Smaller size for mobile */
+    height: 200px;
+    margin-top: 20px; /* Add margin for spacing */
+  }
+
+  /* 🎯 Name and Type */
+  .pokemon-info {
+    position: static; /* Remove absolute positioning */
+    text-align: center; /* Center align for mobile */
+    margin-bottom: 20px; /* Add margin for spacing */
+  }
+
+  .pokemon-name {
+    font-size: 1.5rem; /* Smaller font size for mobile */
+  }
+
+  .pokemon-type {
+    font-size: 1.2rem; /* Smaller font size for mobile */
+  }
+
+  /* 🔘 Evolution Button */
+  .next-evolution-button {
+    padding: 10px 15px; /* Smaller padding for mobile */
+    font-size: 0.9rem; /* Smaller font size for mobile */
+  }
+
+  /* 📊 Enhanced Stats Container */
+  .stats-container {
+    position: static; /* Remove absolute positioning */
+    width: 90%; /* Full width for mobile */
+    margin: 20px auto; /* Center align and add margin */
+  }
+
+  /* 🛡️ Moves Container */
+  .moves-container {
+    position: static; /* Remove absolute positioning */
+    width: 90%; /* Full width for mobile */
+    margin: 20px auto; /* Center align and add margin */
+  }
+
+  /* 📌 Stats Title and Moves Title */
+  .strength-weakness-title, .moves-title {
+    font-size: 1.5rem; /* Smaller font size for mobile */
+  }
+
+  /* 🔢 Individual Stats and Move Items */
+  .stat-item, .move-item {
+    font-size: 1rem; /* Smaller font size for mobile */
+  }
+}
+/* Moves container */
+.moves-container {
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 15px #ffffff;
+  border: 2px solid #ffffff;
+  text-align: center;
+  width: 300px;
+  font-family: 'Poppins', sans-serif;
+  z-index: 10;
+}
+
+/* Media Queries for Mobile Screens (max-width: 767px) */
+@media (max-width: 767px) {
+  /* 🎯 Main Container */
+  .specific-pokemon-container {
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: flex-start; /* Align items to the top */
+    padding-top: 20px; /* Add padding at the top */
+    height: auto; /* Allow container to grow */
+    overflow-y: auto; /* Enable scrolling if content overflows */
+  }
+
+  /* 🌟 Highlighted Pokémon Image */
+  .pokemon-image2 {
+    width: 200px; /* Smaller size for mobile */
+    height: 200px;
+    margin-top: 20px; /* Add margin for spacing */
+  }
+
+  /* 🎯 Name and Type */
+  .pokemon-info {
+    position: static; /* Remove absolute positioning */
+    text-align: center; /* Center align for mobile */
+    margin-bottom: 20px; /* Add margin for spacing */
+  }
+
+  .pokemon-name {
+    font-size: 1.5rem; /* Smaller font size for mobile */
+  }
+
+  .pokemon-type {
+    font-size: 1.2rem; /* Smaller font size for mobile */
+  }
+
+  /* 🔘 Evolution Button */
+  .next-evolution-button {
+    padding: 10px 15px; /* Smaller padding for mobile */
+    font-size: 0.9rem; /* Smaller font size for mobile */
+  }
+
+  /* 📊 Enhanced Stats Container */
+  .stats-container {
+    position: static; /* Remove absolute positioning */
+    width: 90%; /* Full width for mobile */
+    margin: 20px auto; /* Center align and add margin */
+  }
+
+  /* 🛡️ Moves Container */
+  .moves-container {
+    position: static; /* Remove absolute positioning */
+    width: 90%; /* Full width for mobile */
+    margin: 20px auto; /* Center align and add margin */
+    padding: 15px; /* Smaller padding for mobile */
+  }
+
+  /* 📌 Stats Title and Moves Title */
+  .strength-weakness-title, .moves-title {
+    font-size: 1.5rem; /* Smaller font size for mobile */
+  }
+
+  /* 🔢 Individual Stats and Move Items */
+  .stat-item, .move-item {
+    font-size: 1rem; /* Smaller font size for mobile */
+  }
+}
