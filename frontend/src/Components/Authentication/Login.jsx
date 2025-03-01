@@ -17,9 +17,10 @@ const Login = () => {
     const [password,setPassword]=useState('')
     const [showPassword, setShowPassword] = useState(false);
     const navigate=useNavigate()
+    const baseUrl=process.env.REACT_APP_BACKEND_URL
     const handleSubmit=async()=>{
         try {
-            const response=await axios.post("/user/login",{
+            const response=await axios.post(`${baseUrl}/user/login`,{
                 email,
                 password
             },

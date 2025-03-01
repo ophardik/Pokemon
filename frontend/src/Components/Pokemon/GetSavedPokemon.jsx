@@ -11,7 +11,7 @@ const GetSavedPokemon = () => {
   const [loading, setLoading] = useState(false);
   const userId = sessionStorage.getItem("userId");
   const navigate = useNavigate();
-
+  const baseUrl=process.env.REACT_APP_BACKEND_URL;
   const getPokemon = async () => {
     if (!userId) {
       console.error("User ID is missing");
@@ -22,7 +22,7 @@ const GetSavedPokemon = () => {
     try {
       setLoading(true);
       const response = await axios.post(
-        "/api/getSavePokemon",
+        `${baseUrl}/api/getSavePokemon`,
         { userId },
         { headers: { "Content-Type": "application/json" } }
       );
@@ -45,7 +45,7 @@ const GetSavedPokemon = () => {
       return;
     }
     try {
-      const response = await axios.delete(`/api/deletePokemon?userId=${userId}&pokemonName=${pokeName}`);
+      const response = await axios.delete(`${baseUrl}/api/deletePokemon?userId=${userId}&pokemonName=${pokeName}`);
 
       if (response.data.success) {
         setPokemon(pokemon.filter((poke) => poke.name !== pokeName)); // Update state

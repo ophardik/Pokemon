@@ -10,7 +10,7 @@ const NextEvolution = () => {
   const { pokemonName } = useParams();
   const [evolutions, setEvolutions] = useState([]);
   const [loading, setLoading] = useState(false);
-
+  const baseUrl=process.env.REACT_APP_BACKEND_URL;
   useEffect(() => {
     if (pokemonName) {
       fetchNextEvolutions(pokemonName);
@@ -20,7 +20,7 @@ const NextEvolution = () => {
   const fetchNextEvolutions = async (name) => {
     setLoading(true);
     try {
-      const response = await axios.get(`/api/getPokemonEvolution?pokemonName=${name}`, {
+      const response = await axios.get(`${baseUrl}/api/getPokemonEvolution?pokemonName=${name}`, {
         headers: {
           "Cache-Control": "no-cache",
           "Pragma": "no-cache",

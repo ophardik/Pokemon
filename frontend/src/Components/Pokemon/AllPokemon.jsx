@@ -18,7 +18,7 @@ const AllPokemon = () => {
   const [comparison, setComparison] = useState(null);
   const userId = sessionStorage.getItem("userId")
   const navigate=useNavigate()
-
+  const baseUrl=process.env.REACT_APP_BACKEND_URL;
   useEffect(() => {
     setLoading(true);
     fetch("https://pokeapi.co/api/v2/pokemon?limit=150")
@@ -61,7 +61,7 @@ const AllPokemon = () => {
         return;
       }
 
-      const existingResponse = await axios.post("/api/checkPokemon", {
+      const existingResponse = await axios.post(`${baseUrl}/api/checkPokemon`, {
         userId,
         name: pokemon.name,
       });
@@ -73,7 +73,7 @@ const AllPokemon = () => {
         return;
       }
 
-      const response = await axios.post("/api/savePokemon", {
+      const response = await axios.post(`${baseUrl}/api/savePokemon`, {
         userId,
         pokeId: pokemon.id,
         name: pokemon.name,
@@ -110,7 +110,7 @@ const AllPokemon = () => {
         return;
       }
   
-      const response = await axios.post(`/api/comparePokemon`, {
+      const response = await axios.post(`${baseUrl}/api/comparePokemon`, {
         userId,
         pokemon1: selectedPokemon.name,
         pokemon2: pokemon.name,

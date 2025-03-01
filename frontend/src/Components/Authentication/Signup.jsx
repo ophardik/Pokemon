@@ -21,6 +21,7 @@ const PokedexSignup = () => {
   const [email, setEmail] = useState("");
   const [showPassword, setShowPassword] = useState(false); // For toggling password visibility
   const navigate = useNavigate();
+  const baseUrl=process.env.REACT_APP_BACKEND_URL
 
   const handleSubmit = async () => {
     if (!email || !name || !password) {
@@ -30,7 +31,7 @@ const PokedexSignup = () => {
 
     try {
         const response = await axios.post(
-            "/user/signup",  // ✅ Ensure correct API URL
+            `${baseUrl}/user/signup`,  // ✅ Ensure correct API URL
             { name, email, password },
             { headers: { "Content-Type": "application/json" } }  // ✅ Ensure JSON format
         );
