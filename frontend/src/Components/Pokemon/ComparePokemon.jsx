@@ -12,6 +12,7 @@ const ComparePokemon = () => {
   const [loading, setLoading] = useState(true);
   const navigate=useNavigate()
   const userId = sessionStorage.getItem("userId");
+  const baseUrl=process.env.REACT_APP_BACKEND_URL;
 
   const getComparedPokemon = async () => {
     try {
@@ -22,7 +23,7 @@ const ComparePokemon = () => {
       }
 
       const response = await axios.post(
-        "/api/getComparePokemon",
+        `${baseUrl}/api/getComparePokemon`,
         { userId },
         { headers: { "Content-Type": "application/json" } }
       );
@@ -40,7 +41,7 @@ const ComparePokemon = () => {
   const handleDeletePokemon = async (pokemon1, pokemon2) => {
     try {
       const response = await axios.delete(
-        `/api/deleteComparePokemon?userId=${userId}&pokemon1=${pokemon1}&pokemon2=${pokemon2}`
+        `${baseUrl}/api/deleteComparePokemon?userId=${userId}&pokemon1=${pokemon1}&pokemon2=${pokemon2}`
       );
 
       if (response.data.success) {
@@ -99,7 +100,7 @@ const ComparePokemon = () => {
               </Link>
               <div className="pokemon-name2">{p.pokemon2.name.toUpperCase()}</div>
 
-              <p className="winner-text">🏆 Winner: <strong>{p.winner}</strong></p>
+              <p className="winner-text">🏆 Winner: <strong>{p.pokemon1.name}</strong></p>
 
               {/* Delete Icon */}
               <button className="delete-btn" onClick={() => handleDeletePokemon(p.pokemon1.name, p.pokemon2.name)}>
