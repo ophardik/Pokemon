@@ -14,6 +14,7 @@ import { useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import loadingGif from "../Updated Image/assets/types/pokeball-loader.gif";
 
 const PokedexSignup = () => {
   const [name, setName] = useState("");
@@ -21,6 +22,7 @@ const PokedexSignup = () => {
   const [email, setEmail] = useState("");
   const [showPassword, setShowPassword] = useState(false); // For toggling password visibility
   const navigate = useNavigate();
+  const [loading,setLoading]=useState(false)
   const baseUrl=process.env.REACT_APP_BACKEND_URL
 
   const handleSubmit = async () => {
@@ -82,9 +84,9 @@ const PokedexSignup = () => {
           </span>
         </div>
 
-        <button className="signup-button" onClick={handleSubmit}>
-          SIGNUP
-        </button>
+        <button className="signup-button" onClick={handleSubmit} disabled={loading}>
+                   {loading ? <img src={loadingGif} alt="Loading..." style={{ width: "30px" }} /> : "LOGIN"}
+                 </button>
 
         <div className="pokemon-graphics">
           <img src={pikachu} alt="Pikachu" className="pokemon-img" />
