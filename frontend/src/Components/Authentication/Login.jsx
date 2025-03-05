@@ -75,7 +75,7 @@ const Login = () => {
           </div>
 
           <button className="signup-button" onClick={handleSubmit} disabled={loading}>
-            {loading ? <img src={loadingGif} alt="Loading..." style={{ width: "30px" }} /> : "SIGNUP"}
+            {loading ? <img src={loadingGif} alt="Loading..." style={{ width: "30px" }} /> : "LOGIN"}
           </button>
 
           <p className="signup-text" style={{ backgroundColor: 'black' }}>Create an account</p>

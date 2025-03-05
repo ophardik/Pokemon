@@ -85,7 +85,7 @@ const PokedexSignup = () => {
         </div>
 
         <button className="signup-button" onClick={handleSubmit} disabled={loading}>
-                   {loading ? <img src={loadingGif} alt="Loading..." style={{ width: "30px" }} /> : "LOGIN"}
+                   {loading ? <img src={loadingGif} alt="Loading..." style={{ width: "30px" }} /> : "SIGNUP"}
                  </button>
 
         <div className="pokemon-graphics">
